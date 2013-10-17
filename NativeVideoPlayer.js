@@ -7,6 +7,12 @@
 //  MIT Licensed
 //  Copyright 2013 Decaf Varsity Software, Inc. All rights reserved.
 
+window.echo = function(str, callback) {
+    cordova.exec(callback, function(err) {
+        callback('Nothing to echo.');
+    }, "Echo", "echo", [str]);
+};
+
 var exec = function (methodName, options, success, error) {
     cordova.exec(success, error, "NativeVideoPlayer", methodName, options);
 };

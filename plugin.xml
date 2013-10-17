@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.phonegap.plugins.inapppurchase"
+    version="2.0.0">
+
+    <name>NativeVideoPlayer</name>
+	
+    <engines>
+        <engine name="cordova" version=">=2.4.0" />
+    </engines>
+	
+    <js-module src="NativeVideoPlayer.js" name="NativeVideoPlayer">
+        <clobbers target="window.NativeVideoPlayer" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <!-- Cordova 2.2 -->
+        <plugins-plist key="NativeVideoPlayer" string="NativeVideoPlayer" />
+                    
+        <!-- Cordova 2.5+ -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="NativeVideoPlayer">
+                <param name="ios-package" value="NativeVideoPlayer"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/NativeVideoPlayer.h" />
+        <source-file src="src/ios/NativeVideoPlayer.m" />
+        
+    </platform>
+</plugin>

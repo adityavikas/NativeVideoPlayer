@@ -8,8 +8,10 @@
 
 #import <Cordova/CDV.h>
 
-@interface Echo : CDVPlugin
+@interface NativeVideoPlayer : CDVPlugin{
+    NSString *movie;
+}
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
+- (void)play:(CDVInvokedUrlCommand*)command;
 
 @end

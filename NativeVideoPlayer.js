@@ -7,30 +7,7 @@
 //  MIT Licensed
 //  Copyright 2013 Decaf Varsity Software, Inc. All rights reserved.
 
-window.echo = function(str, callback) {
-    cordova.exec(callback, function(err) {
-        callback('Nothing to echo.');
-    }, "Echo", "echo", [str]);
+window.playNativeVideo = function(str, onStart, onFail) {
+    cordova.exec(onStart, onFail, "NativeVideoPlayer", "play", [str]);
 };
 
-var exec = function (methodName, options, success, error) {
-    cordova.exec(success, error, "NativeVideoPlayer", methodName, options);
-};
-
-var log = function (msg) {
-    console.log("NativeVideoPlayer[js]: " + msg);
-};
-
-var NativeVideoPlayer = function () {
-    this.options = {};
-};
-
-NativeVideoPlayer.prototype.init = function (options) {
-    this.options = {
-        ready:    options.ready || function () {},
-        error:    options.error || function () {}
-    };
-};
-
-
-module.exports = new NativeVideoPlayer();

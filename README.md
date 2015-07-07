@@ -3,6 +3,11 @@ NativeVideoPlayer
 
 PhoneGap plugin to access native video player in IOS
 
+Fork 
+====
+
+Uses FullScreenViewController when launching VideoPlayer
+
 
 Usage
 =================
